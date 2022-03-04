@@ -3,15 +3,21 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        
+         <link href="estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:fragment="header">
-            <h1 style="color:blueviolet;">Daily pixels</h1>
-            <br>
-            <a th:href="@{/}">Home</a>
-            <br>
-            <br>
+        <header  class="header" th:fragment="header">
+            <nav class="nav">   
+                <a href="index.html" class="nav-link logo">Daily pixels</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Ejemplo9.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Ejemplo1.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audio.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframe.html">iFrame</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formulario.html">Formularios</a></li>
+                </ul>
+                </nav>
         </header>
         
         <footer th:fragment="footer">
