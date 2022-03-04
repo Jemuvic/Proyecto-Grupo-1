@@ -3,24 +3,37 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-         <link href="estilos.css" rel="stylesheet" type="text/css"/>
+            <link href="estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header  class="header" th:fragment="header">
-            <nav class="nav">   
-                <a href="index.html" class="nav-link logo">Daily pixels</a>
-                <ul class="nav-menu">
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Ejemplo9.html">&LeftTriangleBar;</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Ejemplo1.html">&RightTriangleBar;</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audio.html">Audios</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframe.html">iFrame</a></li>
-                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formulario.html">Formularios</a></li>
-                </ul>
-                </nav>
+        <header style=" background-color: #33128d;
+                height: 80px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: left;
+                color: white;
+                " th:fragment="header"> 
+
+            <h1>Daily pixels</h1>
         </header>
-        
-        <footer th:fragment="footer">
+        <nav style="right: 0; position: absolute;" th:fragment="menu">
+            <ul style=" list-style: none; display:  flex;    padding: 0; float: left; position: relative;">
+                <li style=" float: left; position: relative; right: 0;font-weight: bold;font-size: 18px;padding: 20px 20px;box-shadow: 10px 0px 0px -8px red;"><a style="color: white;text-decoration: none;" href="Pagina2.html">Foros </a></li>
+                <li style=" float: left; position: relative; right: 0;font-weight: bold;font-size: 18px;padding: 20px 20px;box-shadow: 10px 0px 0px -8px red;"><a style="color: white;text-decoration: none;" href="Pagina2.html">Noticias </a></li>
+                <li style=" float: left; position: relative; right: 0;font-weight: bold;font-size: 18px;padding: 20px 20px;box-shadow: 10px 0px 0px -8px red;"><a style="color: white;text-decoration: none;" href="Pagina2.html">iniciar sesion </a></li>
+                <li style=" float: left; position: relative; right: 0;font-weight: bold;font-size: 18px;padding: 20px 20px;box-shadow: 10px 0px 0px -8px red;"><a style="color: white;text-decoration: none;" 
+                href="Pagina2.html"> <img src="Imagenes/436-4363443_view-user-icon-png-font-awesome-user-circle.png" alt="imagen"/></a></li>
+            </ul>
+        </nav>
+        <footer style="background-color: #f7f7f7;
+                bottom:0%;
+                left:0%;
+                height:10% ;
+                width:100%;
+                color: black;
+                text-align: center;"  th:fragment="footer">
             &COPY; Derechos Reservados 2022
         </footer>         
     </body>
