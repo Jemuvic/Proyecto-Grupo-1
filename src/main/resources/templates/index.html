@@ -5,12 +5,23 @@
         <meta charset="UTF-8">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
+    
     <body>
         <header th:replace="layout/plantilla :: header"></header>
         <nav th:replace="layout/plantilla :: menu"></nav>
-        <br>
-        <br>
-        <br> 
+        <section class="contenido">
+            <h2 style="text-align: center"> Bienvenido, ¿De que se trata esta pagina?</h2>
+            <p class="descripcion" style="text-align: center">Esta es una pagina de información dirigida a lo que son foros y noticias<p> 
+                <br>
+            <article>
+                <c class="tamaño"> <h3 style="text-align: center">Más información</h3> </c>
+                <p class="descripcion">A efectos de esta practica, visualmente es una demostración del proyecto final y sobre su funcionalidad lo que muestra es el punto de vista de administrador, para modificar información de contacto y de los usuarios</p>
+                <br>
+                <figure>                    
+                        <img src="images/tumblr_msitq5qMwW1sg2d49o1_1280.gif" alt="en progreso" class="center"/>                       
+                </figure>
+            </article>
+</section>
         <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>
