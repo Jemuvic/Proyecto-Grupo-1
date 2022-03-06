@@ -5,26 +5,22 @@
         <meta charset="UTF-8">
     </head>
     <body>
+       
         <header class="header" th:fragment="header"> 
-            <h1>Daily pixels</h1>
+             <figure class="imagenTitulo"><img src="images/Untitled_Artwork.png" alt="" width="70" /></figure>
+             <h1 class="titulo">Daily pixels</h1>
+           
         </header>
         <nav style="right: 0; position: absolute;" th:fragment="menu">
-            <ul style=" list-style: none; display:  flex;    padding: 0; float: left; position: relative;">
-                <li class="nav-menu-item"><a style="color: white;text-decoration: none;" href="Pagina2.html">Foros </a></li>
-                <li class="nav-menu-item"><a style="color: white;text-decoration: none;" href="Pagina2.html">Noticias </a></li>
-                <li class="nav-menu-item"><a style="color: white;text-decoration: none;" href="Pagina2.html">Iniciar sesion </a></li>
-                <li class="nav-menu-item"><a style="color: white;text-decoration: none;" 
-                 href="Pagina2.html"> <img src="images/usuario.png" alt=""/> </a></li>
+            <ul class="nav">
+                <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
+                <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html">Noticias </a></li>
+                <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html">Iniciar sesion </a></li>
+                <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html"> <img src="images/usuario.png" alt=""/> </a></li>
                 
             </ul>
         </nav>       
-        <footer style="background-color: #f7f7f7;
-                bottom:0%;
-                left:0%;
-                height:10% ;
-                width:100%;
-                color: black;
-                text-align: center;"  th:fragment="footer">
+        <footer class="piePagina" th:fragment="footer">
             &COPY; Derechos Reservados 2022
         </footer>         
     </body>

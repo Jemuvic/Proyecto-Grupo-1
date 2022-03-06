@@ -20,5 +20,10 @@ public class IndexController {
         model.addAttribute("attribute", "value");
         return "index";
     }
+       @RequestMapping("/listar")
+    public String listar(Model model) {
+        model.addAttribute("attribute", "value");
+        return "listar";
+    }
     
 }

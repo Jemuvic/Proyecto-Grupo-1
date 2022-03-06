@@ -1,14 +1,11 @@
 .header {
-    background-color: #33128d;
+    background-color: #B9ACFA;
     height: 80px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    text-align: left;
-    color: white;
 }
-
 .nav-menu-item {
     float: left;
     position: relative;
@@ -16,4 +13,45 @@
     font-weight: bold;
     font-size: 18px;
     padding: 10px 10px;
+}
+
+.piePagina{
+    background-color: #f7f7f7;
+    bottom:0%;
+    left:0%;
+    height:0;
+    width:100%;
+    color: black;
+    text-align: center;
+    position: absolute;
+}
+
+
+.imagenTitulo{
+    left: 0;
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 5px;
+    float: left;
+}
+.titulo{
+    padding: 15px 10px;
+    margin: 5px auto;
+    text-align: left;
+    color: black;
+}
+
+.nav-link{
+    alignment-adjust: auto;
+    color: black;
+    text-decoration: none;
+}
+
+.nav{
+    list-style: none; 
+    display:  flex;    
+    padding: 0; 
+    float: left; 
+    position: relative;
+    
 }
