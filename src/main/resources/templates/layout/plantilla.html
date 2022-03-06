@@ -7,17 +7,17 @@
     <body>
        
         <header class="header" th:fragment="header"> 
-             <figure class="imagenTitulo"><img src="images/Untitled_Artwork.png" alt="" width="70" /></figure>
+            <a class="link" th:href="@{/}">
+             <figure class="imagenTitulo"><img src="../images/Untitled_Artwork.png" alt="" width="70" /></figure>
              <h1 class="titulo">Daily pixels</h1>
-           
+           </a>
         </header>
         <nav style="right: 0; position: absolute;" th:fragment="menu">
             <ul class="nav">
                 <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
                 <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html">Noticias </a></li>
                 <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html">Iniciar sesion </a></li>
-                <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html"> <img src="images/usuario.png" alt=""/> </a></li>
-                
+                <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html"> <img src="../images/usuario.png" alt=""/> </a></li>
             </ul>
         </nav>       
         <footer class="piePagina" th:fragment="footer">

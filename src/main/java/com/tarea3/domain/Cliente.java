@@ -12,13 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
 
+/**
+ *
+ * @author ajujargu
+ */
 @Data
 @Entity
-@Table (name="cliente")
-public class Cliente implements Serializable{
-    
+@Table(name = "cliente")
+public class Cliente implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idcliente;
@@ -40,6 +43,4 @@ public class Cliente implements Serializable{
         this.cedula = cedula;
         this.direccion = direccion;
     }
-    
-    
 }

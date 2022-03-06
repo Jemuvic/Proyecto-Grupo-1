@@ -1,13 +1,20 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.tarea3.domain;
 
-package com.tarea3.service;
-
+import com.tarea3.Service.ClienteService;
 import com.tarea3.dao.ClienteDao;
-import com.tarea3.domain.Cliente;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ *
+ * @author ajujargu
+ */
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
@@ -15,16 +22,15 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteDao clienteDao;
 
     @Override
-    @Transactional(readOnly = true) //Maneja transacciones de solo lectura
-    public List<Cliente> getClientes() {
-        return (List<Cliente>) clienteDao.findAll();
+    @Transactional(readOnly =true)
+    public List<Cliente> getCliente() {
+        return (List<Cliente>)clienteDao.findAll();
     }
 
     @Override
-    @Transactional //manejar transacciones de escritura y lectura
+     @Transactional
     public void save(Cliente cliente) {
-        clienteDao.save(cliente);
-
+       clienteDao.save(cliente);
     }
 
     @Override
@@ -34,7 +40,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly =true)
     public Cliente getCliente(Cliente cliente) {
         return clienteDao.findById(cliente.getIdcliente()).orElse(null);
     }
