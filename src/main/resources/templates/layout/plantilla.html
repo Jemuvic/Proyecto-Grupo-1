@@ -5,21 +5,20 @@
         <meta charset="UTF-8">
     </head>
     <body>
-       
         <header class="header" th:fragment="header"> 
             <a class="link" th:href="@{/}">
              <figure class="imagenTitulo"><img src="../images/Untitled_Artwork.png" alt="" width="70" /></figure>
+             </a>
              <h1 class="titulo">Daily pixels</h1>
-           </a>
-        </header>
-        <nav style="right: 0; position: absolute;" th:fragment="menu">
-            <ul class="nav">
+              <nav  class="nav"th:fragment="menu">
+            <ul class="nav-menu">
                 <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
-                <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html">Noticias </a></li>
+                <li class="nav-menu-item"><a class="nav-link" th:href="@{/nuevoContacto/}">Contactenos </a></li>
                 <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html">Iniciar sesion </a></li>
                 <li class="nav-menu-item"><a class="nav-link" href="Pagina2.html"> <img src="../images/usuario.png" alt=""/> </a></li>
             </ul>
-        </nav>       
+        </nav>      
+        </header>    
         <footer class="piePagina" th:fragment="footer">
            <address style="display: inline">&COPY; Derechos Reservados 2022 </address> <address>correo: empresa@empresa.com </address>
         </footer>         
