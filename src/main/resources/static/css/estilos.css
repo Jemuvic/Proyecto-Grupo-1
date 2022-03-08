@@ -1,25 +1,21 @@
 .header {
     background-color: #B9ACFA;
     height: 80px;
-    position: absolute;
+    display:  flex;
     top: 0;
     left: 0;
     width: 100%;
-}
-.nav-menu-item {
-    float: left;
-    position: relative;
-    right: 0;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 10px 10px;
+    font-family: arial;
 }
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 .piePagina{
-    position: absolute;
     bottom: 0;
     left: 0%;
-    height: 5%;
+    height: 50px;
     width: 100%;
     background-color: #B9ACFA;
     color: #D0F562;
@@ -30,39 +26,46 @@
 
 .imagenTitulo{
     left: 0;
-    margin-left: 0;
-    margin-right: 15px;
+    margin-left: 65px;
+    margin-right: 0px;
     margin-top: 5px;
+    margin-bottom: 2px;
     float: left;
 }
 .titulo{
-    padding: 15px 10px;
-    margin: 5px auto;
+    width: 15%;
+    padding: 22px 0px;
+    margin: 0px;
     text-align: left;
     color: black;
 }
 
+.nav{
+    margin-top: 20px;
+    margin-left: 55%;
+}
 .nav-link{
     alignment-adjust: auto;
     color: black;
     text-decoration: none;
 }
-
-.nav{
-    list-style: none; 
-    display:  flex;    
-    padding: 0; 
-    float: left; 
-    position: relative;
-
+.nav-menu{
+    list-style: none;
+    display: flex;
+}
+.nav-menu-item {
+    right: 0;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 10px;
+    font-size: 17px;
 }
 
 .link{
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .contenido {
-    position: fixed;
     top: 6.7%;
     left: 0;
     height: 100%;
@@ -70,25 +73,31 @@
     background-color: #5A49AD;
     color: black;
     overflow: auto;
-   
-}
 
+}
 .descripcion {
     font-size: 24px;
 }
-
 .tamaño {
     font-size: 40px;
 }
-
 .descripcion {
     font-size: 24px;
     text-align: center;
 }
-
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.body{
+    background-color: #5A49AD;
+}
+
+.formulario{
+    margin-bottom: 70px;
+    margin-top: 70px;
+    text-align: center
 }
