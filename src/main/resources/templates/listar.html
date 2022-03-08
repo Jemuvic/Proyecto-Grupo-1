@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
+        <title>Listar</title>
         <meta charset="UTF-8">           
         <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body class="body">
         <header th:replace="layout/plantilla :: header"></header>
-       
+        
+       <section class="contenido">
         <br>
-        <br>   
-        <br>  
+
+          <h1 class="titular">Clientes desde una lista de base de datos</h1>
         <br>
-          <h1>Clientes desde una lista de base de datos</h1>
-        <br>
-        <a th:href="@{/nuevoCliente}">Nuevo Cliente</a>
+            <article class="descripcion">
+        <a class="newnew" th:href="@{/nuevoCliente}">Nuevo Cliente</a>
         <br>
         <div th:if="${clientesDB != null and !clientesDB.empty}">
-            <table border="1">
+            <table class="tablota" border="3">
                 <tr>
-                    <td>Nombre</td>
-                    <td>Apellidos</td>
-                    <td>Correo</td>
-                    <td>Telefono</td>
-                    <td>Cedula</td>
-                    <td>Direccion</td>
-                    <td>Modificar</td>
-                    <td>Eliminar</td>          
+                    <td bgcolor="82FAE4">Nombre</td>
+                    <td bgcolor="82FAE4">Apellidos</td>
+                    <td bgcolor="82FAE4">Correo</td>
+                    <td bgcolor="82FAE4">Telefono</td>
+                    <td bgcolor="82FAE4">Cedula</td>
+                    <td bgcolor="82FAE4">Direccion</td>
+                    <td bgcolor="82FAE4">Modificar</td>
+                    <td bgcolor="82FAE4">Eliminar</td>          
                 </tr>
                 <tr th:each="item : ${clientesDB}">
                     <td th:text="${item.nombre}"></td>
@@ -35,13 +35,17 @@
                     <td th:text="${item.telefono}"></td>
                     <td th:text="${item.cedula}"></td>
                     <td th:text="${item.direccion}"></td>           
-                    <td><a th:href="@{/modificarCliente/} + ${item.idcliente}">Modificar</a></td>
-                    <td><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
+                    <td bgcolor="D0F562"><a th:href="@{/modificarCliente/} + ${item.idcliente}">Modificar</a></td>
+                    <td bgcolor="D0F562"><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
                 </tr>
             </table> 
+            <img src="../static/images/met.gif" alt=""/>
+            </div>
              <div th:if="${clientesDB == null or clientesDB.empty}">
             La lista de clientes está vacia
         </div>
-   <footer th:replace="layout/plantilla :: footer"></footer>
+            </article>
+            </section>
     </body>
+   <footer th:replace="layout/plantilla :: footer"></footer>
 </html>

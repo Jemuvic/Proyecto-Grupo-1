@@ -88,7 +88,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 35%;
+    height: 35%;
 }
 
 .body{
@@ -97,14 +98,15 @@
 }
 
 .formulario{
-    width:340px;
-    height:440px;
+    margin-top: 40px;
+    width:440px;
+    height:540px;
     background:#B9ACFA;
-    border-radius:8px;
-    box-shadow:0 0 40px -10px #000;
+    border-radius:9px;
+    box-shadow:0 0 50px -20px #000;
     margin:calc(44.2vh - 230px) auto;
-    padding:10px 30px;
-    max-width:calc(100vw - 40px);
+    padding:20px 40px;
+    max-width:calc(200vw - 50px);
     box-sizing:border-box;
     font-family:'Montserrat',sans-serif;
     position:relative;
@@ -124,7 +126,6 @@ input:focus{
 }
 
 
-
 input{
     width:100%;
     padding:7px;
@@ -138,13 +139,7 @@ input{
     border-bottom:2px solid #bebed2;
 }
 
-p:before{
-    content:attr(type);
-    display:block;
-    margin:28px 0 0;
-    font-size:14px;
-    color:#5a5a5a;
-}
+
 button{
     float:right;
     padding:8px 12px;
@@ -155,6 +150,7 @@ button{
     color:#5a5a6e;
     cursor:pointer;
     transition:all .3s;
+    border-radius: 40px;
 }
 button:hover{
     background:#78788c;
@@ -163,4 +159,53 @@ button:hover{
 
 textArea{
     width: 100%;
+}
+
+.titular{
+    margin-top: 40px;
+   text-align: center;
+   font-family: arial;
+   margin-bottom: 20px;
+   font-size: 40px;
+}
+
+.tablota {
+    margin:calc(60.2vh - 90px) auto;
+    padding:10px 40px;
+    box-shadow:0 0 50px -20px #000;
+    box-sizing:border-box;
+   background:#B9ACFA;
+     font-family: arial;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+   margin-top: 40px;
+   border-radius: 40px;
+}
+
+.newnew {
+    
+   border: 1px solid #2e518b; 
+padding: 5px; 
+background-color: #B9ACFA; 
+text-decoration: none; 
+text-transform: uppercase; 
+font-family: arial; 
+border-radius: 50px; 
+}
+
+.DCLIENTE{
+    width:640px;
+    height:740px;
+    background:#B9ACFA;
+    border-radius:10px;
+    box-shadow:0 0 70px -40px #000;
+    margin:calc(30.2vh - 200px) auto;
+    padding:40px 60px;
+    max-width:calc(200vw - 50px);
+    box-sizing:border-box;
+    font-family: Arial;
+    position:relative;
+
 }
