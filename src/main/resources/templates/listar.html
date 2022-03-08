@@ -39,6 +39,9 @@
                     <td><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
                 </tr>
             </table> 
+             <div th:if="${clientesDB == null or clientesDB.empty}">
+            La lista de clientes está vacia
+        </div>
    <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>
