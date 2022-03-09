@@ -7,33 +7,32 @@
     </head>
     <body class="body">
         <header th:replace="layout/plantilla :: header"></header>
-       
         <section class="DCLIENTE">
         <h2 class="titular">Datos del cliente</h2>
         <br>
-        <article class="descripcion">
+        <article class="descripcionformulario">
         <a class="newnew" th:href="@{/listar}">Regresar</a>
         <br>
             <br>
         <form th:action="@{/guardarcliente}" method="post" th:object="${cliente}">
             <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
             <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <input type="text" name="nombre" th:field="*{nombre}" required minlength="4" maxlength="10" placeholder="Escriba aqui el nombre"/>
             <br>
             <label for="apellidos">Apellidos: </label>
-            <input type="text" name="apellidos" th:field="*{apellidos}"/>
+            <input type="text" name="apellidos" th:field="*{apellidos}" required minlength="4" maxlength="20" placeholder="Escriba aqui el apellido completo"/>
             <br>
             <label for="correo">Correo: </label>
-            <input type="email" name="correo" th:field="*{correo}"/>
+            <input type="email" name="correo" th:field="*{correo}" required minlength="6" maxlength="15" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="ejemplo@ejemplo.com"/>
             <br>
             <label for="telefono">Telefono: </label>
-            <input type="tel" name="telefono" th:field="*{telefono}"/>
+            <input type="tel" name="telefono" th:field="*{telefono}" required minlength="8" maxlength="8" pattern="[0-9]{8}"placeholder="########"/>
             <br>
             <label for="cedula">Cedula: </label>
-            <input type="id" name="cedula" th:field="*{cedula}"/>
+            <input type="text" name="cedula" th:field="*{cedula}" required minlength="9" maxlength="9" pattern="[0-9]{9}"placeholder="#########"/>
             <br>
             <label for="direccion">Direccion: </label>
-            <input type="text" name="direccion" th:field="*{direccion}"/>
+            <input type="text" name="direccion" th:field="*{direccion}" required minlength="4" maxlength="20" placeholder="Escriba aqui la dirección"/>
             <br>
                 <button type="submit" name="guardar" value="Guardar Registro"> Guardar registro </button>
         </form>

@@ -74,7 +74,7 @@
     overflow: auto;
 
 }
-.descripcion {
+.descripcionformulario{
     font-size: 24px;
 }
 .tamaño {
@@ -127,6 +127,7 @@ input:focus{
 
 
 input{
+    margin-bottom: 10px;
     width:100%;
     padding:7px;
     box-sizing:border-box;
@@ -136,7 +137,7 @@ input{
     border:0;
     font-family:'Montserrat',sans-serif;
     transition:all .3s;
-    border-bottom:2px solid #bebed2;
+    border-bottom:2px solid #fff;
 }
 
 
