@@ -1,5 +1,5 @@
 
-package com.tarea3.domain;
+package com.proyecto.domain;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

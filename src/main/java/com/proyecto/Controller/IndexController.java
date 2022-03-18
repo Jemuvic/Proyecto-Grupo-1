@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/springframework/Controller.java to edit this template
  */
-package com.tarea3.Controller;
+package com.proyecto.Controller;
 
-import com.tarea3.Service.ClienteService;
-import com.tarea3.Service.ContactoService;
-import com.tarea3.domain.Cliente;
-import com.tarea3.domain.Contacto;
+import com.proyecto.Service.ClienteService;
+import com.proyecto.Service.ContactoService;
+import com.proyecto.domain.Cliente;
+import com.proyecto.domain.Contacto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;

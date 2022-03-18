@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.tarea3.Service;
+package com.proyecto.Service;
 
-import com.tarea3.domain.Contacto;
+import com.proyecto.domain.Contacto;
 import java.util.List;
 
 /**
