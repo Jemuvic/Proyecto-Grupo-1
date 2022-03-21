@@ -90,5 +90,14 @@ public class IndexController {
 
         return "crearUsuario";
     }
+    
+     /* Para el html de vista de la noticia*/
+      @RequestMapping("/noticias")
+    public String noticias(Model model) {
+        model.addAttribute("attribute", "value");
+        return "noticias";
+    }
+    
+
 
 }
