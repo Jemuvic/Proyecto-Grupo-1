@@ -78,5 +78,17 @@ public class IndexController {
         contactoService.save(contacto);
         return "redirect:/";
     }
+    
+    @GetMapping("/iniciarSesion")
+    public String iniciarSesion(Contacto contacto) {
+
+        return "iniciarSesion";
+    }
+    
+    @GetMapping("/crearUsuario")
+    public String crearUsuario(Contacto contacto) {
+
+        return "crearUsuario";
+    }
 
 }

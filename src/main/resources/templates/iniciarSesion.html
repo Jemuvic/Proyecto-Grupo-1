@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Contactenos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="body">
+        <header th:replace="layout/plantilla :: header"></header>
+        
+        <section class="formulario">
+            <form name="Formulario-Contacto" th:action="@{/guardarContacto}" method="POST" enctype="multipart/form-data" th:object="${contacto}">
+              <h2 class="tituloForm">Iniciar Sesion</h2>
+              <input type="hidden" name="idContacto" th:field="*{idContacto}"/>
+              <label for="nombre">Nombre:</label>
+               <input type="text" name="nombre" th:field="*{nombre}" required minlength="4" maxlength="10" placeholder="Escriba aqui el nombre"/>
+              <br>
+              <label for="apellidos">Apellido:</label>
+              <input type="text" name="apellidos" th:field="*{apellidos}" required minlength="4" maxlength="20" placeholder="Escriba aqui el apellido completo"/>
+              <br>
+              <label for="correo">Correo:</label>
+              <input type="email" name="correo" th:field="*{correo}" required minlength="6" maxlength="15" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="ejemplo@ejemplo.com"/>
+              <br>
+              <button type="submit" name="guardar" value="Guardar registro">Iniciar Sesion</button>
+            </form>
+        </section>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>
