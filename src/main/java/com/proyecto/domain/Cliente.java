@@ -28,19 +28,14 @@ public class Cliente implements Serializable {
     private String nombre;
     private String apellidos;
     private String correo;
-    private String telefono;
-    private String cedula;
-    private String direccion;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String telefono, String cedula, String direccion) {
+    public Cliente(String nombre, String apellidos, String correo) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
-        this.telefono = telefono;
-        this.cedula = cedula;
-        this.direccion = direccion;
+
     }
 }

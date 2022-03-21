@@ -25,15 +25,6 @@
             <label for="correo">Correo: </label>
             <input type="email" name="correo" th:field="*{correo}" required minlength="6" maxlength="15" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="ejemplo@ejemplo.com"/>
             <br>
-            <label for="telefono">Telefono: </label>
-            <input type="tel" name="telefono" th:field="*{telefono}" required minlength="8" maxlength="8" pattern="[0-9]{8}"placeholder="########"/>
-            <br>
-            <label for="cedula">Cedula: </label>
-            <input type="text" name="cedula" th:field="*{cedula}" required minlength="9" maxlength="9" pattern="[0-9]{9}"placeholder="#########"/>
-            <br>
-            <label for="direccion">Direccion: </label>
-            <input type="text" name="direccion" th:field="*{direccion}" required minlength="4" maxlength="20" placeholder="Escriba aqui la dirección"/>
-            <br>
             <button type="submit" name="guardar" value="Guardar Registro"> Guardar registro </button>
         </form>
         </article>

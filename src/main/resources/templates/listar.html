@@ -22,19 +22,13 @@
                     <td bgcolor="82FAE4">Nombre</td>
                     <td bgcolor="82FAE4">Apellidos</td>
                     <td bgcolor="82FAE4">Correo</td>
-                    <td bgcolor="82FAE4">Telefono</td>
-                    <td bgcolor="82FAE4">Cedula</td>
-                    <td bgcolor="82FAE4">Direccion</td>
                     <td bgcolor="82FAE4">Modificar</td>
                     <td bgcolor="82FAE4">Eliminar</td>          
                 </tr>
                 <tr th:each="item : ${clientesDB}">
                     <td th:text="${item.nombre}"></td>
                     <td th:text="${item.apellidos}"></td>
-                    <td th:text="${item.correo}"></td>
-                    <td th:text="${item.telefono}"></td>
-                    <td th:text="${item.cedula}"></td>
-                    <td th:text="${item.direccion}"></td>           
+                    <td th:text="${item.correo}"></td>         
                     <td bgcolor="D0F562"><a th:href="@{/modificarCliente/} + ${item.idcliente}">Modificar</a></td>
                     <td bgcolor="D0F562"><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
                 </tr>
