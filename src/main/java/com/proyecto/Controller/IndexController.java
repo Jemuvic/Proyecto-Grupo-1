@@ -56,6 +56,19 @@ public class IndexController {
         return "noticias";
     }
     
+    /* Para el html de lista de foros*/
+      @RequestMapping("/inicioForos")
+    public String inicioForos(Model model) {
+        model.addAttribute("attribute", "value");
+        return "inicioForos";
+    }
+    
+    /* Para el html de vista del foro*/
+    @RequestMapping("/inicioForos/foros")
+    public String foros(Model model) {
+        model.addAttribute("attribute", "value");
+        return "foros";
+    }
 
 
 }
