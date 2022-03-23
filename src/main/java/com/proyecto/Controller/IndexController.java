@@ -23,10 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @Slf4j
 public class IndexController {
-
-    @Autowired
-    private ClienteService clienteService;
-    
+   
     @Autowired
     private ContactoService contactoService;
 
@@ -41,38 +38,6 @@ public class IndexController {
         return "perfil";
     }
 
-    @RequestMapping("/listar")
-    public String listar(Model model) {
-        var clientesDB = clienteService.getCliente();
-        model.addAttribute("clientesDB", clientesDB);
-        return "listar";
-    }
-    
-     @GetMapping("/nuevoCliente")
-    public String nuevoCliente(Cliente cliente) {
-        return "modificarCliente";
-
-    }
-
-    @PostMapping("/guardarcliente")
-    public String guardarCliente(Cliente cliente) {
-        clienteService.save(cliente);
-        return "redirect:/listar";
-    }
-
-    @GetMapping("/modificarCliente/{idcliente}")
-    public String modificarCliente(Cliente cliente, Model model) {
-        var respuesta = clienteService.getCliente(cliente);
-        model.addAttribute("cliente", respuesta);
-        return "modificarCliente";
-    }
-
-    @GetMapping("/eliminarCliente/{idcliente}")
-    public String eliminarCliente(Cliente cliente) {
-        clienteService.delete(cliente);
-        return "redirect:/listar";
-    }
-
     @RequestMapping("/nuevoContacto")
     public String nuevoContacto(Contacto contacto) {
         return "contactenos";
@@ -82,18 +47,6 @@ public class IndexController {
     public String guardarContacto(Contacto contacto) {
         contactoService.save(contacto);
         return "redirect:/";
-    }
-    
-    @GetMapping("/iniciarSesion")
-    public String iniciarSesion(Contacto contacto) {
-
-        return "iniciarSesion";
-    }
-    
-    @GetMapping("/crearUsuario")
-    public String crearUsuario(Contacto contacto) {
-
-        return "crearUsuario";
     }
     
      /* Para el html de vista de la noticia*/

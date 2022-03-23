@@ -22,13 +22,17 @@
                     <td bgcolor="82FAE4">Nombre</td>
                     <td bgcolor="82FAE4">Apellidos</td>
                     <td bgcolor="82FAE4">Correo</td>
+                    <td bgcolor="82FAE4">Contraseña</td>
+                    <td bgcolor="82FAE4">Estado</td>
                     <td bgcolor="82FAE4">Modificar</td>
                     <td bgcolor="82FAE4">Eliminar</td>          
                 </tr>
                 <tr th:each="item : ${clientesDB}">
                     <td th:text="${item.nombre}"></td>
                     <td th:text="${item.apellidos}"></td>
-                    <td th:text="${item.correo}"></td>         
+                    <td th:text="${item.correo}"></td>
+                    <td th:text="${item.password}"></td>
+                    <td th:text="${item.estado}"></td>  
                     <td bgcolor="D0F562"><a th:href="@{/modificarCliente/} + ${item.idcliente}">Modificar</a></td>
                     <td bgcolor="D0F562"><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
                 </tr>

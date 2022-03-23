@@ -28,6 +28,8 @@ public class Cliente implements Serializable {
     private String nombre;
     private String apellidos;
     private String correo;
+    private String password;
+    private boolean estado;
 
     public Cliente() {
     }
