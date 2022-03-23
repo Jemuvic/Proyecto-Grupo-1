@@ -161,6 +161,34 @@ textArea{
     margin-top: 40px;
     border-radius: 40px;
 }
+
+.tablotaPerfil{
+    margin:calc(60.2vh - 90px) auto;
+    padding: 39px 57px;
+    left: 50%;
+    right: 0%;
+    box-shadow:0 0 50px -20px #000;
+    box-sizing:border-box;
+    background:#B9ACFA;
+    font-family: arial;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    margin-top: 40px;
+    border-radius: 40px;
+}
+
+.tablotaPerfil div{
+    position: relative;
+    width: inherit;
+}
+.tablotaPerfil #img{
+    color: #ccff66;
+    position: absolute;
+    top: 21%;
+    right: 30%;
+}
 .newnew {
     border: 1px solid #2e518b;
     padding: 5px;
@@ -240,7 +268,7 @@ textArea{
 }
 
 .figura:hover{
-  transform:scale(1.25);
+    transform:scale(1.25);
 }
 
 /*barra de busqueda*/
@@ -316,16 +344,16 @@ textArea{
     font-family: 'Helvetica', sans-serif; 
     text-align: left;
     margin-right: 10px;
-  margin-left: 20px;
+    margin-left: 20px;
     font-size: 23px;
 }
 .imagen--noticia{
     float: right;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 45%;
-  height: 70%;
-   border-radius: 20px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 45%;
+    height: 70%;
+    border-radius: 20px; 
 }
 .fecha--noticia{
     margin:10px 0;

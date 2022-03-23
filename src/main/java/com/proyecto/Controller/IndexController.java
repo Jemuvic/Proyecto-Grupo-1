@@ -35,6 +35,11 @@ public class IndexController {
         model.addAttribute("attribute", "value");
         return "index";
     }
+    
+    @RequestMapping("/perfil")
+    public String perfil (Model model){
+        return "perfil";
+    }
 
     @RequestMapping("/listar")
     public String listar(Model model) {
