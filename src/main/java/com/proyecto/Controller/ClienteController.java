@@ -21,18 +21,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 public class ClienteController {
-       
-     @Autowired
+
+    @Autowired
     private ClienteService clienteService;
-      
-      @RequestMapping("/listar")
+
+    @RequestMapping("/listar")
     public String listar(Model model) {
         var clientesDB = clienteService.getCliente();
         model.addAttribute("clientesDB", clientesDB);
         return "listar";
     }
-    
-     @GetMapping("/nuevoCliente")
+
+    @GetMapping("/nuevoCliente")
     public String nuevoCliente(Cliente cliente) {
         return "modificarCliente";
 
@@ -56,19 +56,26 @@ public class ClienteController {
         clienteService.delete(cliente);
         return "redirect:/listar";
     }
-    
+
     /* Para el html de iniciarSesion*/
     @GetMapping("/iniciarSesion")
     public String iniciarSesion(Cliente cliente) {
-
         return "iniciarSesion";
     }
-    
+
+    @GetMapping("/validarSesion")
+    public String validarSesion(Cliente cliente) {
+        if (clienteService.getCorreo(cliente)==true && clienteService.getPassword(cliente)==true) {
+            return "index";
+        } else {
+            return "iniciarSesion";
+        }
+    }
+
     /* Para el html de crearUsuario*/
     @GetMapping("/crearUsuario")
     public String crearUsuario(Cliente cliente) {
-
         return "crearUsuario";
     }
-    
+
 }

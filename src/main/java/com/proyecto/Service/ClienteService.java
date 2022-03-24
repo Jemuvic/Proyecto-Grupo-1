@@ -16,5 +16,7 @@ public interface ClienteService {
     public void save(Cliente cliente);
     public void delete(Cliente cliente);
     public Cliente getCliente(Cliente cliente);
+    public boolean getCorreo(Cliente cliente);
+    public boolean getPassword(Cliente cliente);
     
 }

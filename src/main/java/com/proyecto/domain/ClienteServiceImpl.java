@@ -22,15 +22,15 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteDao clienteDao;
 
     @Override
-    @Transactional(readOnly =true)
+    @Transactional(readOnly = true)
     public List<Cliente> getCliente() {
-        return (List<Cliente>)clienteDao.findAll();
+        return (List<Cliente>) clienteDao.findAll();
     }
 
     @Override
-     @Transactional
+    @Transactional
     public void save(Cliente cliente) {
-       clienteDao.save(cliente);
+        clienteDao.save(cliente);
     }
 
     @Override
@@ -40,9 +40,21 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    @Transactional(readOnly =true)
+    @Transactional(readOnly = true)
     public Cliente getCliente(Cliente cliente) {
         return clienteDao.findById(cliente.getIdcliente()).orElse(null);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public boolean getCorreo(Cliente cliente) {
+        return clienteDao.equals(cliente.getCorreo());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public boolean getPassword(Cliente cliente) {
+        return clienteDao.equals(cliente.getPassword());
     }
 
 }
