@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Daily pixels</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header class="header" th:fragment="header"> 
+            <a class="link" th:href="@{/}">
+                <figure class="imagenTitulo"><img src="../images/Untitled_Artwork.png" alt="" width="70" /></figure>
+            </a>
+            <h1 class="titulo">Daily pixels</h1>
+            <nav  class="nav"th:fragment="menu">
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/}">Noticias </a></li>
+                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/inicioForos/}">Foros </a></li>
+                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
+                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/nuevoContacto/}">Contactenos </a></li>
+                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/iniciarSesion/}">Iniciar sesion </a></li>
+                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/perfil/}"> <img src="../images/usuario.png" alt=""/> </a></li>
+                </ul>
+                
+                
+                
+            <div th:if="${clientesDB != null and !clientesDB.empty}">
+            <table class="tablota" border="3">
+                <tr>
+                    <td bgcolor="82FAE4">Nombre</td>
+                    <td bgcolor="82FAE4">Apellidos</td>
+                    <td bgcolor="82FAE4">Correo</td>
+                    <td bgcolor="82FAE4">Contraseña</td>
+                    <td bgcolor="82FAE4">Estado</td>
+                    <td bgcolor="82FAE4">Modificar</td>
+                    <td bgcolor="82FAE4">Eliminar</td>          
+                </tr>
+                <tr th:each="item : ${clientesDB}">
+                    <td th:text="${item.nombre}"></td>
+                    <td th:text="${item.apellidos}"></td>
+                    <td th:text="${item.correo}"></td>
+                    <td th:text="${item.password}"></td>
+                    <td th:text="${item.estado}"></td>  
+                    <td bgcolor="D0F562"><a th:href="@{/modificarCliente/} + ${item.idcliente}">Modificar</a></td>
+                    <td bgcolor="D0F562"><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
+                </tr>
+            </table> 
+            </nav>      
+        </header>    
+        <footer class="piePagina" th:fragment="footer">
+            <address style="display: inline">&COPY; Derechos Reservados 2022 </address> <address>correo: empresa@empresa.com </address>
+        </footer>         
+    </body>
+</html>

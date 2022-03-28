@@ -46,15 +46,8 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public boolean getCorreo(Cliente cliente) {
-        return clienteDao.equals(cliente.getCorreo());
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public boolean getPassword(Cliente cliente) {
-        return clienteDao.equals(cliente.getPassword());
+    public Cliente findByCorreoAndPassword(String correo, String password) {
+        return clienteDao.findByCorreoAndPassword(correo, password);
     }
 
 }

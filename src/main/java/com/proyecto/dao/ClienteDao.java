@@ -5,12 +5,14 @@
 package com.proyecto.dao;
 
 import com.proyecto.domain.Cliente;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author ajujargu
  */
-public interface ClienteDao extends CrudRepository<Cliente, Long> {
+public interface ClienteDao extends JpaRepository<Cliente, Long> {
+    public Cliente findByCorreoAndPassword(String correo, String password);
 
 }

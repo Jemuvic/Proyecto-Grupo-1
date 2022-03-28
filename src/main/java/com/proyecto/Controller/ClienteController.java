@@ -63,12 +63,20 @@ public class ClienteController {
         return "iniciarSesion";
     }
 
-    @GetMapping("/validarSesion")
+    /*Validadcion del Usuario y Guardado del estado*/
+    @PostMapping("/validarSesion")
     public String validarSesion(Cliente cliente) {
-        if (clienteService.getCorreo(cliente)==true && clienteService.getPassword(cliente)==true) {
-            return "index";
-        } else {
+        if (clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword())==null){
             return "iniciarSesion";
+        } else{
+            cliente.setApellidos(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getApellidos());
+            cliente.setNombre(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getNombre());
+            cliente.setIdcliente(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getIdcliente());
+            cliente.setCorreo(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getCorreo());
+            cliente.setPassword(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getPassword());
+            cliente.setEstado(true);
+            clienteService.save(cliente);
+            return "menuPrincipal";
         }
     }
 
