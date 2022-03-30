@@ -9,6 +9,7 @@ import com.proyecto.domain.Cliente;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,10 +66,11 @@ public class ClienteController {
 
     /*Validadcion del Usuario y Guardado del estado*/
     @PostMapping("/validarSesion")
-    public String validarSesion(Cliente cliente) {
-        if (clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword())==null){
+    @Transactional
+    public String validarSesion(Cliente cliente, Model model) {
+        if (clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()) == null) {
             return "iniciarSesion";
-        } else{
+        } else {
             cliente.setApellidos(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getApellidos());
             cliente.setNombre(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getNombre());
             cliente.setIdcliente(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getIdcliente());
@@ -76,8 +78,20 @@ public class ClienteController {
             cliente.setPassword(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getPassword());
             cliente.setEstado(true);
             clienteService.save(cliente);
+            var clientesDB = clienteService.findByEstado(true);
+            model.addAttribute("clientesDB", clientesDB);
             return "menuPrincipal";
         }
+    }
+
+    /*Metodo para cerrar sesion y cambiar el estado*/
+    @GetMapping("/cerrarSesion")
+    @Transactional
+    public String cerrarSesion(Model model) {
+        var cliente = clienteService.findByEstado(true);
+        cliente.setEstado(false);
+        clienteService.save(cliente);
+        return "redirect:/";
     }
 
     /* Para el html de crearUsuario*/

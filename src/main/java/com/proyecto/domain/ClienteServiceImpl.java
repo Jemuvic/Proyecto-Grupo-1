@@ -44,10 +44,16 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente getCliente(Cliente cliente) {
         return clienteDao.findById(cliente.getIdcliente()).orElse(null);
     }
-
+ /* metodo para valisar por correo y clave*/
     @Override
     public Cliente findByCorreoAndPassword(String correo, String password) {
         return clienteDao.findByCorreoAndPassword(correo, password);
+    }
+ /* metodo para valisar por estado de activo*/
+    @Override
+    @Transactional(readOnly = true)
+    public Cliente findByEstado(boolean estado) {
+        return clienteDao.findByEstado(estado);
     }
 
 }

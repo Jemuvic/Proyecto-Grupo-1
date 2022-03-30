@@ -4,6 +4,7 @@
     display:  flex;
     width: 100%;
     font-family: arial;
+    margin: auto;
 }
 * {
 
@@ -20,7 +21,7 @@
 }
 .imagenTitulo{
     left: 0;
-    margin-left: 180px;
+    margin-left: 150px;
     margin-right: 0px;
     margin-top: 5px;
     margin-bottom: 2px;
@@ -32,12 +33,12 @@
     padding-right: 0;
     padding-left: 0;
     margin: 0px;
-    text-align: left;
     color: black;
+    margin-right:  12%;
 }
 .nav{
     margin-top: 20px;
-    margin-left: 40%;
+    margin-left: 20%;
 }
 .nav-link{
     alignment-adjust: auto;
@@ -47,13 +48,13 @@
 .nav-menu{
     list-style: none;
     display: flex;
-    padding-left: 60px;
+    padding:0;
 }
 .nav-menu-item {
     right: 0;
     font-weight: bold;
     font-size: 18px;
-    padding: 10px 10px;
+    padding: 10px 15px;
     font-size: 17px;
 }
 .link{
@@ -335,13 +336,13 @@ textArea{
 }
 .titulo--noticia{
     margin:10px 0;
-    padding-bottom:10px;    
-    color:  #D0F562; 
+    padding-bottom:10px;
+    color:  #D0F562;
     font-size: 30px;
     margin-left: 230px;
 }
 .contenido--noticia{
-    font-family: 'Helvetica', sans-serif; 
+    font-family: 'Helvetica', sans-serif;
     text-align: left;
     margin-right: 10px;
     margin-left: 20px;
@@ -353,13 +354,13 @@ textArea{
     margin-right: 10px;
     width: 45%;
     height: 70%;
-    border-radius: 20px; 
+    border-radius: 20px;
 }
 .fecha--noticia{
     margin:10px 0;
-    padding-top:10px; 
+    padding-top:10px;
     padding-bottom:20px;
-    color:  #D0F562; 
+    color:  #D0F562;
     font-size: 20px;
     margin-left: 20px;
 }
@@ -376,7 +377,7 @@ textArea{
     position: relative;
 }
 .barraComentario--form {
-    position: relative;    
+    position: relative;
 }
 .barraComentario--input-cajaComentario {
     padding: 0 66px 0 0;
@@ -386,7 +387,7 @@ textArea{
     background-color: white;
 }
 .barraComentario {
-    padding: 10px 400px 0px 350px;  
+    padding: 10px 400px 0px 350px;
 }
 .barraComentario--input {
     box-sizing: content-box;
@@ -417,8 +418,8 @@ textArea{
 }
 .tituloComentario{
     margin:10px 0;
-    padding-bottom:10px;    
-    color:  #D0F562; 
+    padding-bottom:10px;
+    color:  #D0F562;
     font-size: 30px;
 }
 

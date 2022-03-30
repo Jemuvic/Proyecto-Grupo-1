@@ -13,6 +13,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author ajujargu
  */
 public interface ClienteDao extends JpaRepository<Cliente, Long> {
-    public Cliente findByCorreoAndPassword(String correo, String password);
 
+    public Cliente findByCorreoAndPassword(String correo, String password); /* metodo para valisar por correo y clave*/
+    public Cliente findByEstado(boolean estado); /* metodo para valisar por estado y activo*/
 }
