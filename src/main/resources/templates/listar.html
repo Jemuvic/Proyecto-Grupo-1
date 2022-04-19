@@ -42,8 +42,21 @@
              <div th:if="${clientesDB == null or clientesDB.empty}">
             La lista de clientes está vacia
         </div>
+            
+             <section class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" >
+                        <a  th:href="@{/cliente/ReporteClientes}"
+                           class="btn btn-primary">
+                            <i class="fas fa-file"></i> Reporte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
             </article>
             </section>
-    </body>
+       
    <footer th:replace="layout/plantilla :: footer"></footer>
 </html>
