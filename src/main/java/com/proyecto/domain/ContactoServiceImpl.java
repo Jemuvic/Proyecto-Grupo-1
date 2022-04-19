@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.proyecto.domain;
+
 import com.proyecto.Service.ContactoService;
 import com.proyecto.dao.ContactoDao;
 import java.util.List;
@@ -13,24 +14,31 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ContactoServiceImpl implements ContactoService {
 
-  @Autowired
+    @Autowired
     private ContactoDao contactoDao;
 
     @Override
-    @Transactional(readOnly =true)
+    @Transactional(readOnly = true)
     public List<Contacto> getContacto() {
-        return (List<Contacto>)contactoDao.findAll();
+        return (List<Contacto>) contactoDao.findAll();
     }
 
     @Override
-     @Transactional
+    @Transactional
     public void save(Contacto contacto) {
-       contactoDao.save(contacto);
+        contactoDao.save(contacto);
     }
 
     @Override
-    @Transactional(readOnly =true)
+    @Transactional(readOnly = true)
     public Contacto getContacto(Contacto contacto) {
         return contactoDao.findById(contacto.getIdContacto()).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Contacto contacto) {
+        contactoDao.delete(contacto);
+
     }
 }

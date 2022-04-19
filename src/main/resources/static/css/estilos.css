@@ -195,9 +195,10 @@ textArea{
     padding: 5px;
     background-color: #B9ACFA;
     text-decoration: none;
-    text-transform: uppercase;
+  
     font-family: arial;
     border-radius: 50px;
+     
 }
 .DCLIENTE{
     width:640px;
@@ -421,6 +422,7 @@ textArea{
     padding-bottom:10px;
     color:  #D0F562;
     font-size: 30px;
+    text-align: center;
 }
 
 /*sección de comentarios*/

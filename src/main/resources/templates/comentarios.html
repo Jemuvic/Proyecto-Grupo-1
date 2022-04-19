@@ -1,0 +1,22 @@
+
+<html>
+    <head>
+        <title>Foro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="body">
+        <header th:replace="layout/plantilla :: header"></header>
+
+        <section class="formulario">      
+                <label for="comentario">Comentario: </label>
+                <textarea type="text" name="comentario" th:text="${clienteActivo.comentario}"></textarea>
+                <br>
+                <button type="submit" name="guardar" value="Guardar registro">Enviar comentario</button>
+           
+        </section>
+
+    </body>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</html>

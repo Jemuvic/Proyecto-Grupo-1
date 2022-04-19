@@ -27,6 +27,9 @@ public class IndexController {
     @Autowired
     private ContactoService contactoService;
 
+    @Autowired
+    private ClienteService clienteService;
+    
     @RequestMapping("/")
     public String page(Model model) {
         model.addAttribute("attribute", "value");
@@ -64,11 +67,21 @@ public class IndexController {
     }
     
     /* Para el html de vista del foro*/
-    @RequestMapping("/inicioForos/foros")
-    public String foros(Model model) {
-        model.addAttribute("attribute", "value");
+    @RequestMapping("/inicioForos/foros")   
+    public String foros(Model model, Model model2) {
+        var cliente = clienteService.getCliente();
+        model.addAttribute("cliente", cliente);
+        var clienteActivo = clienteService.findByEstado(true);
+        model2.addAttribute("clienteActivo", clienteActivo);
         return "foros";
+    }
+    
+        @RequestMapping("/comentarios")
+     public String comentarios(Model model) {
+        model.addAttribute("attribute", "value");
+        return "comentarios";
+    }
     }
 
 
-}
+

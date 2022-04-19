@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
-
+import java.util.Date;
 /**
  *
  * @author ajujargu
@@ -30,7 +30,8 @@ public class Cliente implements Serializable {
     private String correo;
     private String password;
     private boolean estado;
-
+    private Date fecha;
+    private String comentario;
     public Cliente() {
     }
 

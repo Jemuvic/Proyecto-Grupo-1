@@ -3,34 +3,62 @@
     <head>
         <title>Contactenos</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body class="body">
-        <header th:replace="layout/plantilla :: header"></header>
-        
-        <section class="formulario">
-            <form name="Formulario-Contacto" th:action="@{/guardarContacto}" method="POST" enctype="multipart/form-data" th:object="${contacto}">
-              <h2 class="tituloForm">Contactenos</h2>
-              <input type="hidden" name="idContacto" th:field="*{idContacto}"/>
-              <label for="nombre">Nombre:</label>
-               <input type="text" name="nombre" th:field="*{nombre}" required minlength="4" maxlength="10" placeholder="Escriba aqui el nombre"/>
-              <br>
-              <label for="apellidos">Apellido:</label>
-              <input type="text" name="apellidos" th:field="*{apellidos}" required minlength="4" maxlength="20" placeholder="Escriba aqui el apellido completo"/>
-              <br>
-              <label for="correo">Correo:</label>
-              <input type="email" name="correo" th:field="*{correo}" required minlength="6" maxlength="15" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="ejemplo@ejemplo.com"/>
-              <br>
-              <label for="telefono">Telefono: </label>
-              <input type="tel" name="telefono" th:field="*{telefono}" required minlength="8" maxlength="8" pattern="[0-9]{8}"placeholder="########"/>
-              <br>
-              <label for="descripcion">Descripcion: </label>
-              <textarea type="text" name="descripcion" th:field="*{descripcion}" required minlength="5" placeholder="Escriba aqui una descripcion de la necesidad"></textarea>
-              <br>
-              <button type="submit" name="guardar" value="Guardar registro">Enviar Mensaje</button>
-            </form>
-        </section>
-        <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
-</html>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+                </head>
+                <body class="body">
+                    <header th:replace="layout/plantilla :: header"></header>
+
+                    <section class="formulario">
+                        <form name="Formulario-Contacto" th:action="@{/guardarContacto}" method="POST" enctype="multipart/form-data" th:object="${contacto}">
+                            <h2 class="tituloForm">Contactenos</h2>
+                            <input type="hidden" name="idContacto" th:field="*{idContacto}"/>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" th:field="*{nombre}" required minlength="4" maxlength="10" placeholder="Escriba aqui el nombre"/>
+                            <br>
+                                <label for="apellidos">Apellido:</label>
+                                <input type="text" name="apellidos" th:field="*{apellidos}" required minlength="4" maxlength="20" placeholder="Escriba aqui el apellido completo"/>
+                                <br>
+                                    <label for="correo">Correo:</label>
+                                    <input type="email" name="correo" th:field="*{correo}" required minlength="6" maxlength="15" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="ejemplo@ejemplo.com"/>
+                                    <br>
+                                        <label for="telefono">Telefono: </label>
+                                        <input type="tel" name="telefono" th:field="*{telefono}" required minlength="8" maxlength="8" pattern="[0-9]{8}"placeholder="########"/>
+                                        <br>
+                                            <label for="descripcion">Descripcion: </label>
+                                            <textarea type="text" name="descripcion" th:field="*{descripcion}" required minlength="5" placeholder="Escriba aqui una descripcion de la necesidad"></textarea>
+                                            <br>
+                                                <button type="submit" name="guardar" value="Guardar registro">Enviar Mensaje</button>
+                                                </form>
+                                                </section>
+                                           
+                    
+                    <!-- Intento de añadir una tabla con los datos de contactos para crear un feedback -->
+                                              <!--  <div th:if="${contactosDB != null and !contactosDB.empty}">
+                                                    <table class="tablota" border="3">
+                                                        <tr>
+                                                            <td bgcolor="82FAE4">Nombre</td>
+                                                            <td bgcolor="82FAE4">Apellidos</td>
+                                                            <td bgcolor="82FAE4">Correo</td>
+                                                            <td bgcolor="82FAE4">telefono</td>
+                                                            <td bgcolor="82FAE4">descripcion</td>
+                                                            
+                                                        </tr>
+
+                                                        <tr th:each="item : ${contactosDB}">
+                                                            <td th:text="${item.nombre}"></td>
+                                                            <td th:text="${item.apellidos}"></td>
+                                                            <td th:text="${item.correo}"></td>
+                                                            <td th:text="${item.telefono}"></td>
+                                                            <td th:text="${item.descripcion}"></td>  
+
+                                                        </tr>
+
+                                                    </table>
+                                                </div>
+                                                <div th:if="${contactosDB == null or contactosDB.empty}">
+                                                    La lista de contactos está vacia
+                                                </div> -->
+                                                <footer th:replace="layout/plantilla :: footer"></footer>
+                                                </body>
+                                                </html>

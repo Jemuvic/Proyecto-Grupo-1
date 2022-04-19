@@ -14,5 +14,6 @@ import java.util.List;
 public interface ContactoService {
     public List<Contacto> getContacto();
     public void save(Contacto contacto);;
+    public void delete(Contacto contacto);
     public Contacto getContacto(Contacto contacto);
 }
