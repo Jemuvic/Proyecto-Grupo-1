@@ -15,6 +15,8 @@
         <br>
             <article class="descripcion">
         <a class="newnew" th:href="@{/nuevoCliente}">Nuevo Cliente</a>
+        <a th:href="@{/cliente/ReporteClientes}" class="newnew">Reporte</a> 
+        
         <br>
         <div th:if="${clientesDB != null and !clientesDB.empty}">
             <table class="tablota" border="3">
@@ -27,6 +29,7 @@
                     <td bgcolor="82FAE4">Modificar</td>
                     <td bgcolor="82FAE4">Eliminar</td>          
                 </tr>
+                
                 <tr th:each="item : ${clientesDB}">
                     <td th:text="${item.nombre}"></td>
                     <td th:text="${item.apellidos}"></td>
@@ -36,24 +39,15 @@
                     <td bgcolor="D0F562"><a th:href="@{/modificarCliente/} + ${item.idcliente}">Modificar</a></td>
                     <td bgcolor="D0F562"><a th:href="@{/eliminarCliente/} + ${item.idcliente}">Eliminar</a></td>
                 </tr>
-            </table> 
-            <img src="../static/images/met.gif" alt=""/>
+                
+            </table>
+             
+            <!-- <img src="/images/met.gif" alt=""/> -->
             </div>
              <div th:if="${clientesDB == null or clientesDB.empty}">
             La lista de clientes está vacia
-        </div>
-            
-             <section class="py-4 mb-4 bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3" >
-                        <a  th:href="@{/cliente/ReporteClientes}"
-                           class="btn btn-primary">
-                            <i class="fas fa-file"></i> Reporte</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>            
+                                   
     </body>
             </article>
             </section>
