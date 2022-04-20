@@ -76,11 +76,22 @@ public class IndexController {
         return "foros";
     }
     
-        @RequestMapping("/comentarios")
-     public String comentarios(Model model) {
-        model.addAttribute("attribute", "value");
-        return "comentarios";
+    @PostMapping("/guardarcomentario")
+    public String guardarComentario(Cliente cliente) {
+        clienteService.save(cliente);
+        return "redirect:/foro";
     }
+    
+    @GetMapping("/comentarios/{idcliente}")
+    public String comentarios(Cliente cliente, Model model) {
+        var respuesta = clienteService.getCliente(cliente);
+        model.addAttribute("cliente", respuesta);
+        return "comentarios"; 
+    }
+    
+    //@GetMapping("/comentarios")
+   // public String comentarios(Cliente cliente) {
+       // return "comentarios";
     }
 
 
