@@ -34,18 +34,22 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @RequestMapping("/listar")
-    public String listar(Model model) {
+    public String listar(Model model, Model model2) {
         var clientesDB = clienteService.getCliente();
-        model.addAttribute("clientesDB", clientesDB);
+        model.addAttribute("clientesDB", clientesDB); 
+        var clientesActivo = clienteService.findByEstado(true); //SE LE AGREGO UN NUEVO MODELO PARA LO DEL MOSTAR USUARIO
+        model2.addAttribute("clientesActivo", clientesActivo);//SE LE AGREGO UN NUEVO MODELO PARA LO DEL MOSTAR USUARIO
         return "listar";
     }
 
     @GetMapping("/nuevoCliente")
-    public String nuevoCliente(Cliente cliente) {
+    public String nuevoCliente(Cliente cliente, Model model) {
+        var clientesActivo = clienteService.findByEstado(true);//SE LE AGREGO UN NUEVO MODELO PARA LO DEL MOSTAR USUARIO
+        model.addAttribute("clientesActivo", clientesActivo);//SE LE AGREGO UN NUEVO MODELO PARA LO DEL MOSTAR USUARIO
         return "modificarCliente";
 
     }
-
+    @Transactional
     @PostMapping("/guardarcliente")
     public String guardarCliente(Cliente cliente) {
         clienteService.save(cliente);
@@ -53,12 +57,14 @@ public class ClienteController {
     }
 
     @GetMapping("/modificarCliente/{idcliente}")
-    public String modificarCliente(Cliente cliente, Model model) {
+    public String modificarCliente(Cliente cliente, Model model, Model model2) {
         var respuesta = clienteService.getCliente(cliente);
         model.addAttribute("cliente", respuesta);
+        var clientesActivo = clienteService.findByEstado(true);//SE LE AGREGO UN NUEVO MODELO PARA LO DEL MOSTAR USUARIO
+        model2.addAttribute("clientesActivo", clientesActivo);//SE LE AGREGO UN NUEVO MODELO PARA LO DEL MOSTAR USUARIO
         return "modificarCliente";
     }
-
+    @Transactional
     @GetMapping("/eliminarCliente/{idcliente}")
     public String eliminarCliente(Cliente cliente) {
         clienteService.delete(cliente);
@@ -67,7 +73,7 @@ public class ClienteController {
 
     /* Para el html de iniciarSesion*/
     @GetMapping("/iniciarSesion")
-    public String iniciarSesion(Cliente cliente) {
+    public String iniciarSesion(Cliente cliente, Model model) {
         return "iniciarSesion";
     }
 
@@ -83,11 +89,12 @@ public class ClienteController {
             cliente.setIdcliente(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getIdcliente());
             cliente.setCorreo(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getCorreo());
             cliente.setPassword(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getPassword());
+            cliente.setComentario(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getComentario());
             cliente.setEstado(true);
             clienteService.save(cliente);
-            var clientesDB = clienteService.findByEstado(true);
-            model.addAttribute("clientesDB", clientesDB);
-            return "menuPrincipal";
+            var clientesActivo = clienteService.findByEstado(true);
+            model.addAttribute("clientesActivo", clientesActivo);
+            return "redirect:/";
         }
     }
 
@@ -103,7 +110,7 @@ public class ClienteController {
 
     /* Para el html de crearUsuario*/
     @GetMapping("/crearUsuario")
-    public String crearUsuario(Cliente cliente) {
+    public String crearUsuario(Cliente cliente, Model model) {
         return "crearUsuario";
     }
 

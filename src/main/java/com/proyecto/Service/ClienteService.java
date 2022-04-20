@@ -16,6 +16,7 @@ public interface ClienteService {
     public void save(Cliente cliente);
     public void delete(Cliente cliente);
     public Cliente getCliente(Cliente cliente);
-    public Cliente findByCorreoAndPassword(String correo, String password); /* metodo para valisar por correo y clave*/
-    public Cliente findByEstado(boolean estado); /* metodo para valisar por estado activo*/
+    public Cliente findByCorreoAndPassword(String correo, String password); /* metodo para validar por correo y clave*/
+    public Cliente findByEstado(boolean estado); /* metodo para validar por estado activo*/
+    public List<Cliente> findByComentarioNotNull();/* metodo para validar por comentarios*/
 }

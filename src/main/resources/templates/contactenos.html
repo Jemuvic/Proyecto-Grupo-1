@@ -7,7 +7,7 @@
                 <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
                 </head>
                 <body class="body">
-                    <header th:replace="layout/plantilla :: header"></header>
+                    <header th:replace="layout/plantilla :: header"></header> 
 
                     <section class="formulario">
                         <form name="Formulario-Contacto" th:action="@{/guardarContacto}" method="POST" enctype="multipart/form-data" th:object="${contacto}">
@@ -31,34 +31,34 @@
                                                 <button type="submit" name="guardar" value="Guardar registro">Enviar Mensaje</button>
                                                 </form>
                                                 </section>
-                                           
-                    
-                    <!-- Intento de añadir una tabla con los datos de contactos para crear un feedback -->
-                                              <!--  <div th:if="${contactosDB != null and !contactosDB.empty}">
-                                                    <table class="tablota" border="3">
-                                                        <tr>
-                                                            <td bgcolor="82FAE4">Nombre</td>
-                                                            <td bgcolor="82FAE4">Apellidos</td>
-                                                            <td bgcolor="82FAE4">Correo</td>
-                                                            <td bgcolor="82FAE4">telefono</td>
-                                                            <td bgcolor="82FAE4">descripcion</td>
-                                                            
-                                                        </tr>
 
-                                                        <tr th:each="item : ${contactosDB}">
-                                                            <td th:text="${item.nombre}"></td>
-                                                            <td th:text="${item.apellidos}"></td>
-                                                            <td th:text="${item.correo}"></td>
-                                                            <td th:text="${item.telefono}"></td>
-                                                            <td th:text="${item.descripcion}"></td>  
 
-                                                        </tr>
-
-                                                    </table>
-                                                </div>
-                                                <div th:if="${contactosDB == null or contactosDB.empty}">
-                                                    La lista de contactos está vacia
-                                                </div> -->
+                                                <!-- Intento de añadir una tabla con los datos de contactos para crear un feedback -->
+                                                <!--  <div th:if="${contactosDB != null and !contactosDB.empty}">
+                                                      <table class="tablota" border="3">
+                                                          <tr>
+                                                              <td bgcolor="82FAE4">Nombre</td>
+                                                              <td bgcolor="82FAE4">Apellidos</td>
+                                                              <td bgcolor="82FAE4">Correo</td>
+                                                              <td bgcolor="82FAE4">telefono</td>
+                                                              <td bgcolor="82FAE4">descripcion</td>
+                                                              
+                                                          </tr>
+  
+                                                          <tr th:each="item : ${contactosDB}">
+                                                              <td th:text="${item.nombre}"></td>
+                                                              <td th:text="${item.apellidos}"></td>
+                                                              <td th:text="${item.correo}"></td>
+                                                              <td th:text="${item.telefono}"></td>
+                                                              <td th:text="${item.descripcion}"></td>  
+  
+                                                          </tr>
+  
+                                                      </table>
+                                                  </div>
+                                                  <div th:if="${contactosDB == null or contactosDB.empty}">
+                                                      La lista de contactos está vacia
+                                                  </div> -->
                                                 <footer th:replace="layout/plantilla :: footer"></footer>
                                                 </body>
                                                 </html>

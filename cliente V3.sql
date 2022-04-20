@@ -1,4 +1,6 @@
-DROP SCHEMA  dailypixels;
+
+DROP SCHEMA dailypixels;
+DROP USER ADMIN_DB;
 
 CREATE SCHEMA `dailypixels`;
 USE dailypixels;
@@ -7,9 +9,10 @@ CREATE TABLE cliente (
 `idcliente` INT NOT NULL AUTO_INCREMENT , 
 `nombre` VARCHAR(30) NOT NULL,
 `apellidos` VARCHAR(50) NOT NULL,
-`correo` VARCHAR(50) NOT NULL UNIQUE,
+`correo` VARCHAR(50) NOT NULL,
 `password` VARCHAR(50) NOT NULL, 
 `estado` BOOlEAN NOT NULL,
+`comentario` VARCHAR(500),
  PRIMARY KEY (`idcliente`)
  );
 
@@ -30,3 +33,5 @@ CREATE USER 'ADMIN_DB' @'%' IDENTIFIED BY 'ADMIN_DB_CLAVE.';
 
 GRANT ALL PRIVILEGES ON dailypixels.* to 'ADMIN_DB';
 flush privileges;
+
+flush privileges

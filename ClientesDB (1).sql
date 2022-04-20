@@ -1,4 +1,5 @@
-DROP SCHEMA  dailypixels;
+DROP SCHEMA dailypixels;
+DROP USER ADMIN_DB;
 
 CREATE SCHEMA `dailypixels`;
 USE dailypixels;
@@ -30,3 +31,7 @@ CREATE USER 'ADMIN_DB' @'%' IDENTIFIED BY 'ADMIN_DB_CLAVE.';
 
 GRANT ALL PRIVILEGES ON dailypixels.* to 'ADMIN_DB';
 flush privileges;
+
+ALTER USER 'ADMIN_DB'@'localhost' IDENTIFIED WITH mysql_native_password BY 
+'Usuar1o_Clave.';
+flush privileges

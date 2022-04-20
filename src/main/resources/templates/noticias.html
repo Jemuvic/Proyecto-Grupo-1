@@ -1,20 +1,19 @@
-
-<html>
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Noticia</title>
         <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
-                </head>
-                <body class="body">
-                    <header th:replace="layout/plantilla :: header"></header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="body">
+  <header th:replace="layout/plantilla :: header"></header>
+        <section class="banner--noticia">
+            <h2 class="titulo--noticia">Noticia</h2>
+            <p class="contenido--noticia"><img src="/images/News.jpg" alt="" class="imagen--noticia"/>Lorem ipsum dolor sit amet consectetur adipiscing elit libero, est ac donec litora euismod natoque lobortis consequat, rutrum nunc ultrices taciti luctus neque tristique. Aenean lobortis morbi natoque faucibus libero facilisi montes nisi consequat, nostra hac ad volutpat quisque accumsan ac netus vel, ligula eleifend in vehicula pharetra nec sed auctor. Mollis nullam gravida orci vestibulum blandit ligula fringilla duis eleifend, neque per felis commodo nunc dapibus eget tincidunt metus interdum, purus mattis cum nostra sodales litora curae lacinia. Urna mattis eu ligula ultrices parturient inceptos dui netus laoreet nunc fermentum, sociosqu tempor eget torquent per volutpat placerat proin nisl pharetra. Rhoncus aliquet nisi vel curabitur quisque diam cras, magna vestibulum cubilia ultricies est facilisis nam, habitant vivamus nulla porttitor auctor dui. Est volutpat felis orci vivamus posuere metus mus, ridiculus nascetur litora pulvinar sodales nisl, nibh iaculis potenti habitasse inceptos donec.</p> 
+            <h3 class="fecha--noticia">Lunes 21/3/2022 11:47a.m.</h3> 
 
-                    <section class="banner--noticia">
-                        <h2 class="titulo--noticia">Noticia</h2>
-                        <p class="contenido--noticia"><img src="/images/News.jpg" alt="" class="imagen--noticia"/>Lorem ipsum dolor sit amet consectetur adipiscing elit libero, est ac donec litora euismod natoque lobortis consequat, rutrum nunc ultrices taciti luctus neque tristique. Aenean lobortis morbi natoque faucibus libero facilisi montes nisi consequat, nostra hac ad volutpat quisque accumsan ac netus vel, ligula eleifend in vehicula pharetra nec sed auctor. Mollis nullam gravida orci vestibulum blandit ligula fringilla duis eleifend, neque per felis commodo nunc dapibus eget tincidunt metus interdum, purus mattis cum nostra sodales litora curae lacinia. Urna mattis eu ligula ultrices parturient inceptos dui netus laoreet nunc fermentum, sociosqu tempor eget torquent per volutpat placerat proin nisl pharetra. Rhoncus aliquet nisi vel curabitur quisque diam cras, magna vestibulum cubilia ultricies est facilisis nam, habitant vivamus nulla porttitor auctor dui. Est volutpat felis orci vivamus posuere metus mus, ridiculus nascetur litora pulvinar sodales nisl, nibh iaculis potenti habitasse inceptos donec.</p> 
-                        <h3 class="fecha--noticia">Lunes 21/3/2022 11:47a.m.</h3> 
-                      
-                    </section>
-                    <footer th:replace="layout/plantilla :: footer"></footer>
-                </body>
-                </html>
+        </section>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>

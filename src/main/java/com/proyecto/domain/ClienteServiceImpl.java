@@ -55,5 +55,12 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente findByEstado(boolean estado) {
         return clienteDao.findByEstado(estado);
     }
+    /* metodo para validar por comentarios*/
+    @Override
+    @Transactional(readOnly = true)
+    public List<Cliente> findByComentarioNotNull (){
+        return clienteDao.findByComentarioNotNull();
+    }
+
 
 }

@@ -5,8 +5,8 @@
 package com.proyecto.dao;
 
 import com.proyecto.domain.Cliente;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
 /**
  *
@@ -14,6 +14,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ClienteDao extends JpaRepository<Cliente, Long> {
 
-    public Cliente findByCorreoAndPassword(String correo, String password); /* metodo para valisar por correo y clave*/
-    public Cliente findByEstado(boolean estado); /* metodo para valisar por estado y activo*/
+    public Cliente findByCorreoAndPassword(String correo, String password); /* metodo para validar por correo y clave*/
+    public Cliente findByEstado(boolean estado); /* metodo para validar por estado y activo*/
+    public List<Cliente> findByComentarioNotNull();/* metodo para validar por comentarios*/
 }

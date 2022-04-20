@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>TODO supply a title</title>
@@ -24,8 +19,7 @@ and open the template in the editor.
                         </p>
             </div>
             <article id="img">
-                <h2>
-                    Nombre del Usuario
+                <h2 th:text="${clientesActivo.nombre}+' '+ ${clientesActivo.apellidos}">
                 </h2>
                 <br>
                     <br>

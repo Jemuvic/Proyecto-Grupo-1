@@ -7,13 +7,13 @@
             <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="body">
-        <header th:replace="layout/plantilla :: header"></header>
+<header th:replace="layout/plantilla :: header"></header>
         
         <section class="formulario">
            <form th:action="@{/guardarcliente}" method="POST" enctype="multipart/form-data" th:object="${cliente}">
               <h2 class="tituloForm">Nueva Partida</h2>
               <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
-              <input type="hidden" name="estado" th:field="*{estado}"/>
+              <input type="hidden" name="estado" th:field="*{estado}" value="true"/>
               <label for="nombre">Nombre:</label>
                <input type="text" name="nombre" th:field="*{nombre}" required minlength="4" maxlength="10" placeholder="Escriba aqui el nombre"/>
               <br>

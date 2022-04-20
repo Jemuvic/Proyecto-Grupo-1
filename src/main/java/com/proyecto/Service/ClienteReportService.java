@@ -41,7 +41,7 @@ public class ClienteReportService {
             //Instanciar la conexión
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/dailypixels", "ADMIN_DB", "Usuar1o_Clave.");
+                    "jdbc:mysql://localhost:3306/dailypixels", "ADMIN_DB", "ADMIN_DB_CLAVE.");//SE LE CAMBIO LA CLAVE
             // Llena el reporte
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
             // Exporta a PDF

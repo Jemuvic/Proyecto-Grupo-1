@@ -20,7 +20,7 @@ import java.util.Date;
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable {
-
+ 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,8 +30,8 @@ public class Cliente implements Serializable {
     private String correo;
     private String password;
     private boolean estado;
-    private Date fecha;
     private String comentario;
+    
     public Cliente() {
     }
 
@@ -39,6 +39,6 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
-
     }
 }
+//SE ELIMINO LA VARIABLE FECHA

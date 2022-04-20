@@ -4,7 +4,7 @@
         <title>Daily pixels</title>
         <meta charset="UTF-8">
     </head>
-    <body>
+    <body>  
         <header class="header" th:fragment="header"> 
             <a class="link" th:href="@{/}">
                 <figure class="imagenTitulo"><img src="../images/Untitled_Artwork.png" alt="" width="70" /></figure>
@@ -16,11 +16,19 @@
                     <li class="nav-menu-item"><a class="nav-link" th:href="@{/inicioForos/}">Foros </a></li>
                     <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
                     <li class="nav-menu-item"><a class="nav-link" th:href="@{/nuevoContacto/}">Contactenos </a></li>
-                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/iniciarSesion/}">Iniciar sesion </a></li>
-                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/perfil/}"> <img src="../images/usuario.png" alt=""/> </a></li>
+                    <div th:if="${clientesActivo != null}" class="nav-menu"> 
+                        <li class="nav-menu-item"><a class="nav-link" th:text="${clientesActivo.nombre}" th:href="@{/perfil/}"></a></li>
+                        <li class="nav-menu-item"><a class="nav-link" th:href="@{/cerrarSesion/}">Cerrar sesion </a></li>
+                        <li class="nav-menu-item"><a class="nav-link" th:href="@{/perfil/}"> <img src="../images/usuario.png" alt=""/> </a></li>
+                    </div>
+                    <div th:if="${clientesActivo == null}" class="nav-menu">
+                        <li class="nav-menu-item"><a class="nav-link" th:href="@{/iniciarSesion/}">Iniciar sesion </a></li>
+                    </div>
+
                 </ul>
             </nav>      
-        </header>    
+        </header>
+
         <footer class="piePagina" th:fragment="footer">
             <address style="display: inline">&COPY; Derechos Reservados 2022 </address> <address>correo: empresa@empresa.com </address>
         </footer>         

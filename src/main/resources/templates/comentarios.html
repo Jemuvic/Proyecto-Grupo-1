@@ -1,5 +1,5 @@
-
-<html>
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Foro</title>
         <meta charset="UTF-8">
@@ -7,22 +7,24 @@
         <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="body">
-        <header th:replace="layout/plantilla :: header"></header>
-
+  <header th:replace="layout/plantilla :: header"></header> 
         <section class="DCLIENTE">
             <h2 class="titular">Agregar comentario</h2>
             <br>
-            <article class="descripcionformulario">
-                
+            <article class="descripcionformulario">      
                 <br>
                 <br>
-                <form th:action="@{/guardarcomentario}" method="post" th:object="${cliente}">
+                   <form th:action="@{/guardarcomentario}" method="post" th:object="${cliente}">
                     <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
+                    <input type="hidden" name="nombre" th:field="*{nombre}"/>
+                    <input type="hidden" name="apellidos" th:field="*{apellidos}"/>
+                    <input type="hidden" name="correo" th:field="*{correo}"/>
+                    <input type="hidden" name="password" th:field="*{password}"/>
                     <input type="hidden" name="estado" th:field="*{estado}"/>
                     <label for="comentario">comentario: </label>
                     <textarea type="text" name="comentario" th:text="${comentario}"></textarea>
                     <button class="colorVerde" type="submit" name="guardar" value="Guardar Registro"> Guardar comentario </button>
-                </form>
+                </form>  
             </article>
         </section>
     </body>
