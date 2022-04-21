@@ -152,15 +152,14 @@ textArea{
     margin:calc(60.2vh - 90px) auto;
     padding:10px 40px;
     box-shadow:0 0 50px -20px #000;
-    box-sizing:border-box;
-    background:#B9ACFA;
-    font-family: arial;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    height: 50%;
-    margin-top: 40px;
     border-radius: 40px;
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .tablotaPerfil{
@@ -195,10 +194,9 @@ textArea{
     padding: 5px;
     background-color: #B9ACFA;
     text-decoration: none;
-  
-    font-family: arial;
-    border-radius: 50px;
-     
+
+font-family: 'Fira Sans Condensed', sans-serif;
+
 }
 .DCLIENTE{
     width:640px;
@@ -418,11 +416,12 @@ textArea{
     transform: translateY(-50%);
 }
 .tituloComentario{
-    margin:10px 0;
-    padding-bottom:10px;
-    color:  #D0F562;
     font-size: 30px;
+    color: #fff;
+    font-weight: 300;
     text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 /*sección de comentarios*/
@@ -475,3 +474,39 @@ textArea{
     color: #82FAE4;
     margin-bottom: 5px;
 }
+
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+  
+ }
+ 
+ .tbl-header th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 20px
+ }
+ 
+ .tbl-content td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 16px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+ 
+.tbl-content{
+    height:120px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+    display: grid;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+

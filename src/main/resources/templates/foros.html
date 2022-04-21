@@ -3,43 +3,54 @@
     <head>
         <title>Foro</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body class="body">
-<header th:replace="layout/plantilla :: header"></header>
-        <section class="banner--noticia">
-            <h2 class="titulo--noticia">Foro</h2>
-            <p class="contenido--noticia"><img src="/images/News.jpg" alt="" class="imagen--noticia"/>Lorem ipsum dolor sit amet consectetur adipiscing elit libero, est ac donec litora euismod natoque lobortis consequat, rutrum nunc ultrices taciti luctus neque tristique. Aenean lobortis morbi natoque faucibus libero facilisi montes nisi consequat, nostra hac ad volutpat quisque accumsan ac netus vel, ligula eleifend in vehicula pharetra nec sed auctor. Mollis nullam gravida orci vestibulum blandit ligula fringilla duis eleifend, neque per felis commodo nunc dapibus eget tincidunt metus interdum, purus mattis cum nostra sodales litora curae lacinia. Urna mattis eu ligula ultrices parturient inceptos dui netus laoreet nunc fermentum, sociosqu tempor eget torquent per volutpat placerat proin nisl pharetra. Rhoncus aliquet nisi vel curabitur quisque diam cras, magna vestibulum cubilia ultricies est facilisis nam, habitant vivamus nulla porttitor auctor dui. Est volutpat felis orci vivamus posuere metus mus, ridiculus nascetur litora pulvinar sodales nisl, nibh iaculis potenti habitasse inceptos donec.</p>                      
-                <br>
-                <br>
-                <br>
-                <br>
-                    <div th:if="${clientesActivo != null}">
-                        <h1 class="tituloComentario">Comentarios
-                        <br>
-                        <br>
-                        <a class="newnew" th:href="@{/comentarios/} + ${clientesActivo.idcliente}"> Agregar comentario </a></h1>
-                    </div>  
-                    
-                   <div th:if="${clientesActivo == null}">
-                        <h1 class="tituloComentario">Comentarios
-                        <br>
-                        <br>
-                        <p>No puedes comentar sin iniciar Sesion</p></h1>
-                    </div> 
-                <table class="tablota" border="3">
-                <tr>
-                    <td bgcolor="82FAE4">Nombre</td>
-                    <td bgcolor="82FAE4">Comentario</td>
-                </tr>
-                <tr th:each="item : ${cliente}">                  
-                    <td th:text="${item.nombre} +' '+ ${item.apellidos}"></td>
-                    <td th:text="${item.comentario}+'                  '"></td>
-                </tr>                
-            </table>                        
-       </section>
-        <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
-</html>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+                            <link rel="preconnect" href="https://fonts.googleapis.com">
+                                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                                    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+                                        </head>
+                                        <body class="body">
+                                            <header th:replace="layout/plantilla :: header"></header>
+                                            <section class="banner--noticia">
+                                                <h2 class="titulo--noticia">Foro</h2>
+                                                <p class="contenido--noticia"><img src="/images/News.jpg" alt="" class="imagen--noticia"/>Lorem ipsum dolor sit amet consectetur adipiscing elit libero, est ac donec litora euismod natoque lobortis consequat, rutrum nunc ultrices taciti luctus neque tristique. Aenean lobortis morbi natoque faucibus libero facilisi montes nisi consequat, nostra hac ad volutpat quisque accumsan ac netus vel, ligula eleifend in vehicula pharetra nec sed auctor. Mollis nullam gravida orci vestibulum blandit ligula fringilla duis eleifend, neque per felis commodo nunc dapibus eget tincidunt metus interdum, purus mattis cum nostra sodales litora curae lacinia. Urna mattis eu ligula ultrices parturient inceptos dui netus laoreet nunc fermentum, sociosqu tempor eget torquent per volutpat placerat proin nisl pharetra. Rhoncus aliquet nisi vel curabitur quisque diam cras, magna vestibulum cubilia ultricies est facilisis nam, habitant vivamus nulla porttitor auctor dui. Est volutpat felis orci vivamus posuere metus mus, ridiculus nascetur litora pulvinar sodales nisl, nibh iaculis potenti habitasse inceptos donec.</p>                      
+                                                <br>
+                                                    <br>
+                                                        <br>
+                                                            <br>
+                                                                <div th:if="${clientesActivo != null}">
+                                                                    <h1 class="tituloComentario">Comentarios
+                                                                        <br>
+                                                                            <br>
+                                                                                <a class="newnew" th:href="@{/comentarios/} + ${clientesActivo.idcliente}"> Agregar comentario </a></h1>
+                                                                                </div>  
+                                                                                <div th:if="${clientesActivo == null}">
+                                                                                    <h1 class="tituloComentario">Comentarios
+                                                                                        <br>
+                                                                                            <br>
+                                                                                                <p>No puedes comentar sin iniciar Sesion</p></h1>
+                                                                                                </div>
+                                                                                                <div class="tbl-content">
+                                                                                                    <table cellpadding="0" cellspacing="0" border="0" style="border-radius: 25px">
+                                                                                                        <thead class="tbl-header">
+                                                                                                            <tr>
+                                                                                                                <th>Nombre</th>
+                                                                                                                <th>Comentario</th>
+                                                                                                            </tr>
+                                                                                                        </thead>
+                                                                                                        <tbody>
+                                                                                                            <tr th:each="item : ${cliente}">                  
+                                                                                                                <td th:text="${item.nombre} +' '+ ${item.apellidos}"></td>
+                                                                                                                <td th:text="${item.comentario}+'                  '"></td>
+                                                                                                            </tr>  
+                                                                                                        </tbody>
+                                                                                                    </table> 
+                                                                                                </div>                       
+                                                                                                </section>
+                                                                                                <footer th:replace="layout/plantilla :: footer"></footer>
+                                                                                                </body>
+                                                                                                </html>
 
