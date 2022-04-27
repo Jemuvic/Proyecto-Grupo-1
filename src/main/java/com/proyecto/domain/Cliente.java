@@ -31,14 +31,19 @@ public class Cliente implements Serializable {
     private String password;
     private boolean estado;
     private String comentario;
+    private String tipo;
     
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo) {
+    public Cliente(String nombre, String apellidos, String correo, String password, boolean estado, String comentario, String tipo) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
+        this.password = password;
+        this.estado = estado;
+        this.comentario = comentario;
+        this.tipo = tipo;
     }
 }
 //SE ELIMINO LA VARIABLE FECHA

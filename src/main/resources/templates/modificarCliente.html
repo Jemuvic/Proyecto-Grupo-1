@@ -28,7 +28,13 @@
             <br>
             <label for="password">Contraseña: </label>
             <input type="text" name="password" th:field="*{password}" required minlength="4" maxlength="20" placeholder="Escriba aqui su contraseña"/>
+           <br>
+                <select th:field="*{tipo}">
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="USER">USER</option>
+                </select>
             <br>
+                
             <button type="submit" name="guardar" value="Guardar Registro"> Guardar registro </button>
         </form>
         </article>

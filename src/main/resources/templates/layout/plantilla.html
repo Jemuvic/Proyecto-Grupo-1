@@ -14,17 +14,19 @@
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a class="nav-link" th:href="@{/}">Noticias </a></li>
                     <li class="nav-menu-item"><a class="nav-link" th:href="@{/inicioForos/}">Foros </a></li>
-                    <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
                     <li class="nav-menu-item"><a class="nav-link" th:href="@{/nuevoContacto/}">Contactenos </a></li>
                     <div th:if="${clientesActivo != null}" class="nav-menu"> 
+                        <div th:if="${clientesActivo.tipo == 'ADMIN'}" class="nav-menu"> 
+                            <li class="nav-menu-item"><a class="nav-link" th:href="@{/listar/}">Listar </a></li>
+                        </div>
                         <li class="nav-menu-item"><a class="nav-link" th:text="${clientesActivo.nombre}" th:href="@{/perfil/}"></a></li>
                         <li class="nav-menu-item"><a class="nav-link" th:href="@{/cerrarSesion/}">Cerrar sesion </a></li>
                         <li class="nav-menu-item"><a class="nav-link" th:href="@{/perfil/}"> <img src="../images/usuario.png" alt=""/> </a></li>
+
                     </div>
                     <div th:if="${clientesActivo == null}" class="nav-menu">
-                        <li class="nav-menu-item"><a class="nav-link" th:href="@{/iniciarSesion/}">Iniciar sesion </a></li>
+                        <li class="nav-menu-item"><a class="nav-link" th:href="@{/iniciarSesion/}">Iniciar sesion </a></li>  
                     </div>
-
                 </ul>
             </nav>      
         </header>

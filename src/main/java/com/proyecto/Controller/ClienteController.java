@@ -57,6 +57,7 @@ public class ClienteController {
     }
 
     @GetMapping("/modificarCliente/{idcliente}")
+    @Transactional
     public String modificarCliente(Cliente cliente, Model model, Model model2) {
         var respuesta = clienteService.getCliente(cliente);
         model.addAttribute("cliente", respuesta);
@@ -90,6 +91,7 @@ public class ClienteController {
             cliente.setCorreo(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getCorreo());
             cliente.setPassword(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getPassword());
             cliente.setComentario(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getComentario());
+            cliente.setTipo(clienteService.findByCorreoAndPassword(cliente.getCorreo(), cliente.getPassword()).getTipo());
             cliente.setEstado(true);
             clienteService.save(cliente);
             var clientesActivo = clienteService.findByEstado(true);
