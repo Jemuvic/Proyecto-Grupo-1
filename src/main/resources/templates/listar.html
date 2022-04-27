@@ -4,6 +4,12 @@
         <title>Listar</title>
         <meta charset="UTF-8">           
         <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+                            <link rel="preconnect" href="https://fonts.googleapis.com">
+                                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                                    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
     </head>
 <header th:replace="layout/plantilla :: header"></header>
         
@@ -17,18 +23,21 @@
         <a th:href="@{/cliente/ReporteClientes}" class="newnew">Reporte</a> 
         
         <br>
-        <div th:if="${clientesDB != null and !clientesDB.empty}">
-            <table class="tablota" border="3">
+            <br>
+                <br>
+        <div th:if="${clientesDB != null and !clientesDB.empty}" class="div-users">
+            <table class="tbl-users" border="1">
+                <thead class="tbl-header">
                 <tr>
-                    <td bgcolor="82FAE4">Nombre</td>
-                    <td bgcolor="82FAE4">Apellidos</td>
-                    <td bgcolor="82FAE4">Correo</td>
-                    <td bgcolor="82FAE4">Contraseña</td>
-                    <td bgcolor="82FAE4">Estado</td>
-                    <td bgcolor="82FAE4">Modificar</td>
-                    <td bgcolor="82FAE4">Eliminar</td>          
+                    <th >Nombre</th>
+                    <th >Apellidos</th>
+                    <th >Correo</th>
+                    <th >Contraseña</th>
+                    <th >Estado</th>
+                    <th >Modificar</th>
+                    <th >Eliminar</th>          
                 </tr>
-                
+                </thead>
                 <tr th:each="item : ${clientesDB}">
                     <td th:text="${item.nombre}"></td>
                     <td th:text="${item.apellidos}"></td>
